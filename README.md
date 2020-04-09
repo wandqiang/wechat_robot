@@ -1,5 +1,5 @@
 # wx_bot
-微信斗图
+自动回复和斗图：采用图灵机器人接口和斗图网数据
 # 安装以下模块（命令行）
 # pip install requests
 # pip install bs4
