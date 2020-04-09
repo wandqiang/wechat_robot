@@ -3,14 +3,14 @@ import bs4
 import random
 import re
 #arg：关键字　图片数量
-#return ：fomat（图片格式），如果没找到图片或网页请求失败就返回False
-#图片存在当前目录下：/doutu.fomat
+#return ：fomat（图片格式 img gif..），如果没找到图片或网页请求失败就返回False
+#图片存在当前目录下：/tem/doutu.fomat
 def qiotu(keyword):
     url = "http://www.doutula.com/search"
     headers = {"keyword" : keyword}
 
     r = requests.get(url,headers)
-    if+ r.status_code != 200:
+    if r.status_code != 200:
         print("网页请求失败：%d" % r.status_code)
         return False
     else:
@@ -25,7 +25,7 @@ def qiotu(keyword):
             imgurl = imgtag["data-backup"]
             fomat = re.search("\w\w\w$",imgurl).group()
             try:
-                f = open("doutu.%s" % fomat,"wb")
+                f = open("/tmp/doutu.%s" % fomat,"wb")
                 data = requests.get(imgurl)
                 print("图片请求完成: %s" % imgurl)
                 f.write(data.content)
