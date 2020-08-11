@@ -1,4 +1,9 @@
 .idea/*
 __pycache__/*
+<<<<<<< HEAD
 *.pkl
 .vscode
+=======
+*.pkl
+.vscode
+>>>>>>> 09f7a179f6a888417819a9cd3a45b7042e7ef1d9
